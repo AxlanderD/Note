@@ -10,3 +10,7 @@
      Math.floor(n)   向下取整
      Math.round(n)   四舍五入
      parseInt(n)     舍去小数
+
+     mysql：
+     ON DUPLICATE KEY UPDATE 如果在insert语句后面带上这句话，当插入的行与表中的记录的唯一索引或者主键不产生重复值，那么会进行插入，
+     否则会将旧行进行更新
