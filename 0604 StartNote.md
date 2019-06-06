@@ -1,0 +1,62 @@
+0604 
+=======
+     读书笔记Start
+0605 
+======
+
+     js：
+     js基本数据类型：Undefine、boolean、Number、String、function、Object
+     基本类型检测方法  变量 m
+                      typeof m         判断基本数据类型，遇到引用数据类型不起作用
+                      m instanceof 类型      判断引用
+                      m.constructor  
+                      Object.prototype.toString.call(m) 返回一个string ‘[object 类型名]’ 这种是JQuery中使用的类型判断方法
+                      
+                      注意 Null的类型通过typeof读出来是object；Undefine的类型通过typeof读出来是Undefined，最准确的是第四种方法
+                      
+     sort()函数 主要用于对于数组的元素进行排序（按照字符编码的顺序进行排序）js中的sort实现算法是冒泡算法，直接在原数组上进行排序，不会生成副本
+     arr.sort(sortby) 其中sortby可以用于选择排序的顺序 必须使用函数
+     arr.sort((a,b)=>(){return a - b;}) 当返回值为正数的时候交换两个形参在数组中的位置 ，这样写的话是从大到小进行排序。比较传入两个参数
+     arr.sort(()=>{ return Math.random - 0.5;}) Math.random是生成0-1的随机函数 -0.5 后将会有一半的概率<0,也就是是相邻的数字会有一半的概率进行交换
+     从而达到随机的效果
+     n.toFixed(0-20) 保留小数点后多少位
+     Math.ceil(n)    向上取整
+     Math.floor(n)   向下取整
+     Math.round(n)   四舍五入
+     parseInt(n)     舍去小数
+----
+     mysql：
+     ON DUPLICATE KEY UPDATE 如果在insert语句后面带上这句话，当插入的行与表中的记录的唯一索引或者主键不产生重复值，那么会进行插入，
+     否则会将旧行进行更新
+0606 
+=====
+     js：
+     (function(){
+     }());          
+     IIFE函数 立即执行函数表达式
+----     
+     ES6：
+     let关键字 定义了一个块定义域；而且禁止了变量提升；可能会造成暂时性死区（即在后面定义的变量，未执行到定义之前不可使用）；不允许重复声明
+     块级定义域中，优先使用函数表达式(形如：{ let f = function(){...}; } )而不是函数定义
+     
+     const关键字 声明一个只读的常量，声明后不可改变；只在当前块作用域生效；禁止变量提升；不可重复声明；
+     指向 变量地址 ，若是指向的是一个 对象地址 ，则可以对对象的属性进行改变，增加属性或者改变属性的变量，但是不可以改变对象的引用。
+     Object.freeze(obj) 将对象冻结这样的话，就不可以对对象进行属性操作了
+     
+     6种声明方法：1.let 2.function 3.var 4.const 5.class 6.import
+     
+     顶层对象的属性和全局变量：顶层对象（在浏览器中指的是window对象，Node中指的是global对象）
+     ES6 中var和function定义的全局变量仍然为顶层对象的属性。const、let、class、import 这里的设计是为了将全局变量和顶层对象属性逐渐脱离.
+     顶层对象提供全局作用域。浏览器中顶层对象为window
+                           Node 中顶层对象为global
+                           Web Worker （多线程操作）中顶层对象为self
+     但是因为不同环境中的顶层对象指向不同，因此需要进行判断是否可以取到顶层对象。
+
+     解构赋值：
+          解构失败，等于undefined
+          1.数组的解构赋值
+          2.对象的解构赋值(如{bar,foo } = {foo:'aaa',bar:'bbb'})
+            对象先找到同名属性，再将值赋给属性后面的变量
+            形如：{bar：bar,foo:foo} = {foo:'aaa',bar:'bbb'}
+            若：{bar：b,foo:f} = {foo:'aaa',bar:'bbb'}
+            //b:“bbb” f：“aaa”
