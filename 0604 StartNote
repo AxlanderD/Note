@@ -1,10 +1,14 @@
 0604 读书笔记Start
 0605 js：
      js基本数据类型：Undefine、boolean、Number、String、function、Object
-     基本类型检测方法   typeof          判断基本数据类型
-                      instanceof       判断引用
-                      .constructor  
-                      Object.prototype.toString.call(Obj) 这种是JQuery中使用的类型判断方法
+     基本类型检测方法  变量 m
+                      typeof m         判断基本数据类型，遇到引用数据类型不起作用
+                      m instanceof 类型      判断引用
+                      m.constructor  
+                      Object.prototype.toString.call(m) 返回一个string ‘[object 类型名]’ 这种是JQuery中使用的类型判断方法
+                      
+                      注意 Null的类型通过typeof读出来是object；Undefine的类型通过typeof读出来是Undefined，最准确的是第四种方法
+                      
      sort()函数 主要用于对于数组的元素进行排序（按照字符编码的顺序进行排序）js中的sort实现算法是冒泡算法，直接在原数组上进行排序，不会生成副本
      arr.sort(sortby) 其中sortby可以用于选择排序的顺序 必须使用函数
      arr.sort((a,b)=>(){return a - b;}) 当返回值为正数的时候交换两个形参在数组中的位置 ，这样写的话是从大到小进行排序。比较传入两个参数
@@ -35,4 +39,4 @@
      6种声明方法：1.let 2.function 3.var 4.const 5.class 6.import
      
      顶层对象的属性和全局变量：顶层对象（在浏览器中指的是window对象，Node中指的是global对象）
-     ES6 中var和function定义的全局变量仍然为顶层对象的属性。const、let、class、import
+     ES6 中var和function定义的全局变量仍然为顶层对象的属性。const、let、class、import 这里的设计是为了将全局变量和顶层对象属性逐渐脱离
