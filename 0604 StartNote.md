@@ -60,3 +60,49 @@
             形如：{bar：bar,foo:foo} = {foo:'aaa',bar:'bbb'}
             若：{bar：b,foo:f} = {foo:'aaa',bar:'bbb'}
             //b:“bbb” f：“aaa”
+            对象的解构赋值可以很方便的把对象的方法赋值到某个变量
+            例 const{log} = console;
+               log('hello') //将console.log赋值给了log
+     
+-----
+     sql:
+     union
+     limit
+     USING BTREE
+     `name` like '%{$name}%'
+-----
+     js:
+     charAt() 返回特定位置的字符
+0609     
+=====
+     sql:
+     关联在原表的基础上加入另一张表的字段值
+     左关联；右关联；等值连接；
+     左关联：left join ：select * from A 
+                         left join B
+                         on A.brandId = B.brandId
+          取得左边的A表全表，以及右表B.brandId和A.brandId值相等的字段。记录不足的地方用Null补全
+     右关联：right join ：select * from A 
+                         right join B
+                         on A.brandId = B.brandId
+          取得左边的A表A.brandId和B.brandId相等的记录，以及右表B表全表。记录不足的地方用Null补全
+     等值连接：inner join：select * from A 
+                          inner join B
+                          on A.brandId = B.brandId
+          只会出现两者brandId字段值相等的记录
+     完整外部连接： FULL   JOIN：连接所有行，当有一张表的行数不足时，另一张表空值补全
+     交叉连接（笛卡尔积）：
+
+     连接查询：
+     标准形式: from a [join_type] b [on] condition
+     对一个表的操作称为自连接，等值连接 使用 = 建立啊查询关系，不等连接 使用 <>（不等于的意思）,<,>,!=,!<,!>建立查询关系
+     null只能通过 is null 和 is not null 进行判断
+     内连接：inner join
+
+     查询结果中再查询
+     形式：
+     select *from 
+     （select *from tableA where condition）[table_name] 
+     where condition ...
+     table_name是一个不重复的表名
+-----  
