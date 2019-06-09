@@ -16,7 +16,7 @@
                       
      sort()函数 主要用于对于数组的元素进行排序（按照字符编码的顺序进行排序）js中的sort实现算法是冒泡算法，直接在原数组上进行排序，不会生成副本
      arr.sort(sortby) 其中sortby可以用于选择排序的顺序 必须使用函数
-     arr.sort((a,b)=>(){return a - b;}) 当返回值为正数的时候交换两个形参在数组中的位置 ，这样写的话是从大到小进行排序。比较传入两个参数
+     arr.sort((a,b)=>(){return a - b;}) 当返回值为正数的时候交换两个形参在数组中的位置 ，这样写的话是从小到大进行排序。比较传入两个参数
      arr.sort(()=>{ return Math.random - 0.5;}) Math.random是生成0-1的随机函数 -0.5 后将会有一半的概率<0,也就是是相邻的数字会有一半的概率进行交换
      从而达到随机的效果
      n.toFixed(0-20) 保留小数点后多少位
@@ -92,12 +92,20 @@
           只会出现两者brandId字段值相等的记录
      完整外部连接： FULL   JOIN：连接所有行，当有一张表的行数不足时，另一张表空值补全
      交叉连接（笛卡尔积）：
+     A表中的每一行都和B表中的每一行进行连接 
+     A有n行，B有m行，则最后产生m*n行记录，即将A表和B表进行组合
 
      连接查询：
      标准形式: from a [join_type] b [on] condition
-     对一个表的操作称为自连接，等值连接 使用 = 建立啊查询关系，不等连接 使用 <>（不等于的意思）,<,>,!=,!<,!>建立查询关系
+     自连接   对一个表的操作称为自连接
+     等值连接 使用 = 建立查询关系
+     不等连接 使用 <>（不等于的意思）,<,>,!=,!<,!>建立查询关系
      null只能通过 is null 和 is not null 进行判断
+     
+     大体上分三类连接：
      内连接：inner join
+     外连接：left join，right join，full join（左连接，右连接，全连接）
+     交叉连接：
 
      查询结果中再查询
      形式：
@@ -105,4 +113,15 @@
      （select *from tableA where condition）[table_name] 
      where condition ...
      table_name是一个不重复的表名
+
+     选择不重复:select distinct
+     更新表中字段:update tableName set 列名 = 值
+     删除数据;delete from tablename condition
+
+     bettwen  范围
+     like  匹配模式 :前面含有g% 末尾含有%g 中间含有%g%
 -----  
+     es6:
+     插入的地方使用${变量名}
+     字符串模板：let num = 123
+                let str = 'this is a module ${num}'
