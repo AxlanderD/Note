@@ -124,4 +124,15 @@
      es6:
      插入的地方使用${变量名}
      字符串模板：let num = 123
-                let str = 'this is a module ${num}'
+                let str = `this is a module ${num}`
+                使用反单引号，esc键下方
+0611
+=====
+-----
+     es6:
+     promise:
+     异步流程控制
+     co模块
+     redis迁移
+----
+     
