@@ -184,6 +184,9 @@ js
        返回从1970-1-1 00:00:00 UTC到指定日期的的毫秒数
        使用范例：Date.UTC(year,month[,date[,hrs[,min[,sec[,ms]]]]]) //年，月，日，小时，分钟，秒，毫秒
      Date.parse():
+
+     原型链：
+     
        
        
        
