@@ -14,3 +14,5 @@ function f(a,b,c,d,e){
 f(...a)
 let arr = ['a','b','c','d','e','f']
 console.log(arr.join('*'))
+let string = 'abcdefg'
+console.log(string.indexOf('a'))
