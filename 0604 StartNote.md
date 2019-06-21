@@ -260,9 +260,14 @@ MarkDown写法
 ```
 `形成小的代码块`
 
+<<<<<<< HEAD
 **注脚写法**[1]
 
 [1]:https://www.runoob.com/markdown/md-image.html
+=======
+标题 [^t1]
+[^t1]:脚注的写法要配套
+>>>>>>> 0e1f557ddd8692afaf17c636e850f179e8cab9f8
 
 # H1
 ## H2
