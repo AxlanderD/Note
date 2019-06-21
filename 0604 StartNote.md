@@ -1,13 +1,11 @@
-0604 
-=======
-     读书笔记Start
-0605 
-======
-JS
-------
-     js基本数据类型：
-       Undefine、boolean、Number、String、function、Object
-     基本类型检测方法  
+## 0604 
+# 读书笔记Start
+## 0605 
+---
+### JS
+js基本数据类型：<br>
+`Undefine` `boolean` `Number` `String` `function` `Object`<br>
+基本类型检测方法  
        变量    m
        typeof m         判断基本数据类型，遇到引用数据类型不起作用
        m instanceof 类型      判断引用
@@ -160,16 +158,20 @@ JS
 =====
 js
 -----
-     concat():
+`concat()`:
        作用：将数组进行连接，不改变原来的数组，返回一个副本
        用法：arr = arr1.concat(arr2,arr3,arr4,...)
-     .join('') :
-       例如:arr=['a','b,'c']
-            arr.join() = a,b,c
-            arr.join('-') = a-b-c
-     for in 和 for of遍历数组的区别:
-       1.for in遍历字符串索引
-       2.for in遍历顺序可能不是按照实际数组的内部顺序
+
+`.join('')`:
+例如:
+```
+arr=['a','b,'c']
+arr.join() = a,b,c
+arr.join('-') = a-b-c
+```
+**for in** 和 **for of**遍历数组的区别:
+1.for in遍历字符串索引
+2.for in遍历顺序可能不是按照实际数组的内部顺序
        3.for in会遍历所有可枚举属性，包括原型
        for in适合遍历对象/迭代器/字符串/map/set等拥有迭代器对象的集合：如遍历hash表 for(let key in hash)
 
@@ -256,8 +258,9 @@ MarkDown写法
 ```
 `形成小的代码块`
 
-标题 [^title1]
-^title1 : 脚注的写法要配套
+**注脚写法**[1]
+
+[1]:https://www.runoob.com/markdown/md-image.html
 
 # H1
 ## H2
@@ -266,11 +269,13 @@ MarkDown写法
 ##### H5
 
 ***
-**表格写法**
+**表格写法**[2]
 cap1|cap2|cap3
---|:--:|--:
+:--|:--:|--:
 content1|content2|content3|
+[2]:https://www.runoob.com/markdown/md-image.html
 
+**Ps：** 可以在markdown文档中使用html标签 如`<kdb>` `<b>` `<i>` `<em>` `<sup>` `<sub>` `<br>` `<a>` `<img>` 等
 
 
 
