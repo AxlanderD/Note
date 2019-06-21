@@ -1,46 +1,48 @@
 ## 0604 
 # 读书笔记Start
-## 0605 
 ---
+## 0605 
+
 ### JS
 js基本数据类型：<br>
 `Undefine` `boolean` `Number` `String` `function` `Object`<br>
 基本类型检测方法  
-       变量    m
-       typeof m         判断基本数据类型，遇到引用数据类型不起作用
-       m instanceof 类型      判断引用
-       m.constructor  
-       Object.prototype.toString.call(m) 返回一个string ‘[object 类型名]’ 这种是JQuery中使用的类型判断方法
+变量 `m`<br>
+`typeof m` 判断基本数据类型，遇到引用数据类型不起作用
+`m instanceof typeString[数据类型]` 判断引用
+`m.constructor`  
+`Object.prototype.toString.call(m)` 返回一个 string ‘[object 类型名]’ 这种是JQuery中使用的类型判断方法最准确，通过原型链进行判断
      
-     注意 Null的类型通过typeof读出来是object；Undefine的类型通过typeof读出来是Undefined，最准确的是第四种方法
-                      
-     sort()函数 
-       主要用于对于数组的元素进行排序（按照字符编码的顺序进行排序）js中的sort实现算法是冒泡算法，直接在原数组上进行排序，不会生成副本
-       arr.sort(sortby) 其中sortby可以用于选择排序的顺序 必须使用函数
-       arr.sort((a,b)=>(){return a - b;}) 当返回值为正数的时候交换两个形参在数组中的位置 ，这样写的话是从小到大进行排序。比较传入两个参数
-       arr.sort(()=>{ return Math.random - 0.5;}) Math.random是生成0-1的随机函数 -0.5 后将会有一半的概率<0,也就是是相邻的数字会有一半的概率进行交换从而达到随机的效果
-     n.toFixed(0-20) 
-       保留小数点后多少位
-     Math.ceil(n)    
-       向上取整
-     Math.floor(n)   
-       向下取整
-     Math.round(n)   
-       四舍五入
-     parseInt(n)     
-       舍去小数
-----
-     mysql：
-     ON DUPLICATE KEY UPDATE 如果在insert语句后面带上这句话，当插入的行与表中的记录的唯一索引或者主键不产生重复值，那么会进行插入，
-     否则会将旧行进行更新
-0606 
-=====
-     js：
-     (function(){
-     }());          
-     IIFE函数 立即执行函数表达式
-----     
-     ES6：
+**注意：** `Null`的类型通过`typeof`读出来是`object`；`Undefine`的类型通过`typeof`读出来是`Undefined`，最准确的是第四种方法<br>
+
+`sort()`函数主要用于对于数组的元素进行排序（按照字符编码的顺序进行排序）js中的sort实现算法是冒泡算法，直接在原数组上进行排序，不会生成副本
+```
+arr.sort(sortby)//其中sortby可以用于选择排序的顺序 必须使用函数
+arr.sort((a,b)=>(){return a - b;})//当返回值为正数的时候交换两个形参在数组中的位置 ，这样写的话是从小到大进行排序。比较传入两个参数
+arr.sort(()=>{ return Math.random - 0.5;})//Math.random是生成0-1的随机函数 -0.5 后将会有一半的概率<0,也就是是相邻的数字会有一半的概率进行交换从而达到随机的效果
+
+n.toFixed(0-20) //保留小数点后多少位
+Math.ceil(n) //向上取整
+Math.floor(n) //向下取整
+Math.round(n) //四舍五入
+parseInt(n) //舍去小数
+```
+### MySql
+
+`ON DUPLICATE KEY UPDATE` <br>
+如果在insert语句后面带上这句话，当插入的行与表中的记录的唯一索引或者主键不产生重复值，那么会进行插入，否则会将旧行进行更新
+
+---
+## 0606 
+### js
+```
+(function(){
+  doList();
+}());
+```
+IIFE函数 立即执行函数表达式
+
+### ES6：
      let关键字 定义了一个块定义域；而且禁止了变量提升；可能会造成暂时性死区（即在后面定义的变量，未执行到定义之前不可使用）；不允许重复声明
      块级定义域中，优先使用函数表达式(形如：{ let f = function(){...}; } )而不是函数定义
      
