@@ -39,3 +39,6 @@ function f2(){
 
 }
 f2()
+let obj = {a:'1',name:'c'}
+let e = obj.age || {}
+console.log(e)

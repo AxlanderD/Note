@@ -284,7 +284,8 @@ content1|content2|content3|
 [2]:https://www.runoob.com/markdown/md-image.html
 
 **Ps：** 可以在markdown文档中使用html标签 如`<kdb>` `<b>` `<i>` `<em>` `<sup>` `<sub>` `<br>` `<a>` `<img>` 等
-[跳转至markdown](#MarkDown写法)
+[跳转至markdown](#MarkDown写法)&nbsp;&nbsp;&nbsp;&nbsp;
+[注脚](#注脚写法)
 
 ---
 
@@ -292,6 +293,7 @@ content1|content2|content3|
 ===
 ### JS
 fs模块：
+- `writeFileSync(filename,data[,options])`：写入文件路径，写入内容，Options为Object数组对象，包括encoding（string）写入格式、mode（Number）文件读写权限、flag（String）<br>
 - `unlink(filepath,callfunction())`：删除指定路径的文件，然后调用回调函数<br>
   - `unlinkSync(filepath)[同步版本]`：删除指定路径文件，无返回值<br>
 - `mkdir(dirpath,callfunction())`：创建文件夹，完成操作后调用回调函数<br>
