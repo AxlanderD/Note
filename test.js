@@ -42,3 +42,5 @@ f2()
 let obj = {a:'1',name:'c'}
 let e = obj.age || {}
 console.log(e)
+console.log(require('os').cpus().length)
+console.log(require('os').cpus())

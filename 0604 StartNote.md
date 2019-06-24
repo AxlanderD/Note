@@ -303,6 +303,11 @@ fs模块：
 
 `const { spawn } = require('child_process')`
 
+### 概念
+**并发**：在 <strong>一段时间间隔</strong> 中运行多个任务<br>
+**并行**：在 <strong>同一时刻</strong> 运行多个任务
+
+
 
 
 
