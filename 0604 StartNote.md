@@ -285,6 +285,20 @@ content1|content2|content3|
 
 **Ps：** 可以在markdown文档中使用html标签 如`<kdb>` `<b>` `<i>` `<em>` `<sup>` `<sub>` `<br>` `<a>` `<img>` 等
 
+---
+
+0624
+===
+### JS
+fs模块：
+- `unlink(filepath,callfunction())`：删除指定路径的文件，然后调用回调函数<br>
+  - `unlinkSync(filepath)[同步版本]`：删除指定路径文件，无返回值<br>
+- `mkdir(dirpath,callfunction())`：创建文件夹，完成操作后调用回调函数<br>
+  - `mkdirSync(filepath)[同步版本]`：指定路径创建文件夹，无返回值<br>
+- `rmdir(dirpath,callfunction())`：删除文件夹，完成操作后调用回调函数<br>
+  - `rmdirSync(filepath)[同步版本]`：删除指定路径文件夹，无返回值<br>
+
+`const { spawn } = require('child_process')`
 
 
 
