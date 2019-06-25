@@ -23,7 +23,7 @@ let t2 = Date.now()
 //写入响应数据
 response.end(`NodeJs write data:\n${data}\ncost time:${t2-t1}`)
 
-}).listen(8088) //监听端口
+}).listen(8080) //监听端口
 
 //http 请求头->请求内容->监听端口
 
@@ -35,6 +35,7 @@ console.log(buf)
 console.log(buf.toString('utf8',0,10))
 let dataJson = JSON.stringify({'name':'dd','age':12})
 console.log(JSON.parse(dataJson))
+
 let S = 1000
 setInterval(()=>{
   let now = new Date()
@@ -46,3 +47,4 @@ setInterval(()=>{
   time = `${Month+1} 月 ${date} 日 ${Hour} 时 ${Minute} 分 ${Second} 秒`
   console.log(`统计时间:${time} 剩余内存:`+Number(require('os').freemem()/(1024*1024*1024)).toFixed(4)+' GB')
 },S*60*2)
+console.log(Object.prototype.toString.call(S))

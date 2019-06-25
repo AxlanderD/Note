@@ -91,4 +91,9 @@ JavaScript中只有字符串数据类型,没有二进制数据类型,在处理TC
 - `buf.copy(targetBuffer[,targetStart[,sourceStart[,sourceEnd]]])`:从数据源那里进行拷贝,指定数据源,buf复制到targetBuffer中指定的位置上,buf为sourceBuffer
 - `buf.slice(start,end)`:将缓存区切片,返回原内存start到end的位置上的内容
 - `buf.length`:缓冲区占用的内容长度
-- `buf[index]`:返回指定的字节;`buf.equals(buf2)`:比较两个缓冲区是否相等;
+- `buf[index]`:返回指定的字节;`buf.equals(buf2)`:比较两个缓冲区是否相等
+---
+### JS基础常用方法
+**标准库**
+- Object对象:所有的对象都继承自Object对象,对象都是Object的实例
+  - 
