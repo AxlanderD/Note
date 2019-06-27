@@ -95,5 +95,28 @@ JavaScript中只有字符串数据类型,没有二进制数据类型,在处理TC
 ---
 ### JS基础常用方法
 **标准库**
-- Object对象:所有的对象都继承自Object对象,对象都是Object的实例
-  - 
+- Object对象:所有的对象都继承自Object对象,对象都是Object的实例,Object中分为静态方法和实例方法，静态方法是部署在Object对象自身的方法
+  - **Object静态方法**
+    - `Object.keys(o1)`:获取对象o1的属性值(PS:此方法对于类失效),只返回**可枚举属性**
+    - `Object.getOwnPropertyNames(o1)`：获取对象o1的属性值(PS:此方法对于类失效)，可返回不可枚举属性
+    - `Object.getOwnPropertyDescriptor()`
+    - `Object.defineProperty()`
+    - `Object.defineProperties()`
+    - `Object.preventExtensions()`
+    - `Object.isExtensible()`
+    - `Object.seal()`
+    - `Object.isSealed()`
+    - `Object.freeze()`
+    - `Object.isFrozen()`
+    - `Object.create()`
+    - `Object.getPrototypeOf()`
+  - **Object实例方法**
+    - `Object.prototype.valueOf()`
+    - `Object.prototype.toString()`:判断数据类型很好用
+    - `Object.prototype.toLocaleString()`
+    - `Object.prototype.hasOwnProperty()`
+    - `Object.prototype.isPrototypeOf()`
+    - `Object.prototype.propertyIsEnumerable()`
+- **原型链对象**：Object.prototype 上的属性和方法可以被所有的实例共享
+
+[可枚举属性](#可枚举属性)：是否为可枚举属性取决于enumeration值，可枚举属性可以被遍历到
