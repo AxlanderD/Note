@@ -1,27 +1,27 @@
 let clustor = require('cluster')
 
-class temp {
-constructor(){
-  this.a = 'a'
-  this.b = 'b'
-  this.f1
-  this.f2
-}
-f1(){
-console.log(`a:${this.a}`)
-}
-f2(){
-  console.log(`b:${this.b}`)
-}
-}
+// class temp {
+// constructor(){
+//   this.a = 'a'
+//   this.b = 'b'
+//   this.f1
+//   this.f2
+// }
+// f1(){
+// console.log(`a:${this.a}`)
+// }
+// f2(){
+//   console.log(`b:${this.b}`)
+// }
+// }
 
-let temp2 = {
-  a:[1,2,3],
-  b:2,
-  f1:function(){
-    console.log(`a: ${this.a}`)
-  }
-}
+// let temp2 = {
+//   a:[1,2,3],
+//   b:2,
+//   f1:function(){
+//     console.log(`a: ${this.a}`)
+//   }
+// }
 
 // let t1 = new temp()
 // t1.f1()
@@ -45,35 +45,38 @@ let temp2 = {
 // console.log(Object.prototype.toString.call(t2))
 
 
-var type = function (o){
-  var s = Object.prototype.toString.call(o);
-  return s.match(/\[object (.*?)\]/)[1].toLowerCase();
-};
+// var type = function (o){
+//   var s = Object.prototype.toString.call(o);
+//   return s.match(/\[object (.*?)\]/)[1].toLowerCase();
+// };
 
-['Null',
- 'Undefined',
- 'Object',
- 'Array',
- 'String',
- 'Number',
- 'Boolean',
- 'Function',
- 'RegExp',
- 'suibian'
-].forEach(function (t) {
-  type['is' + t] = function (o) {
-    return type(o) === t.toLowerCase();
-  };
-});
+// ['Null',
+//  'Undefined',
+//  'Object',
+//  'Array',
+//  'String',
+//  'Number',
+//  'Boolean',
+//  'Function',
+//  'RegExp',
+//  'suibian'
+// ].forEach(function (t) {
+//   type['is' + t] = function (o) {
+//     return type(o) === t.toLowerCase();
+//   };
+// });
 
-console.log(type)
-temp2['aFunction'] = function(co){
-  console.log(`this is aFunction ${co}`)
-}
-console.log(temp2)
-temp['addNew'] = function(){
-  console.log('addNewFunction')
-}
-console.log(temp)
+// console.log(type)
+// temp2['aFunction'] = function(co){
+//   console.log(`this is aFunction ${co}`)
+// }
+// console.log(temp2)
+// temp['addNew'] = function(){
+//   console.log('addNewFunction')
+// }
+// console.log(temp)
+
+let arr = ['a','b','c']
+console.log(...new Set(arr))
 
 
