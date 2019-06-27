@@ -324,9 +324,9 @@ fs模块：
 - 接口只能包含方法声明
 - 接口的成员包括 方法，属性，索引器，事件
 - 接口中不能包含常量，字段阈，构造函数，析构函数，静态成员
-- 接口允许多继承接口 关键字extends
+- 接口允许多继承接口 关键字 **extends**
 - 接口中的方法都是共有的
-- 声明接口关键字 interface
+- 声明接口关键字 **interface**
 
 **抽象类（abstract）**：抽象类是具体类中的抽象，是一个父类，可以作为<strong>子类</strong>的模板。特点如下：
 - 抽象方法只能作为声明，但是不包含实现
@@ -345,7 +345,33 @@ fs模块：
 - 都可以被继承
 - 都不能被实例化
 - 都可以包含方法声明
-- 派生类必须实现未实现的方法 实现关键字 implements
+- 派生类必须实现未实现的方法 实现关键字 **implements**
+
+0627
+===
+
+### 一种在Object后面增加成员方法的写法
+```
+// 定义一个类
+let temp2 = {
+  a:[1,2,3],
+  b:2,
+  f1:function(){
+    console.log(`a: ${this.a}`)
+  }
+}
+
+temp2['aFunction'] = function(){
+     console.log(`this is aFunction`)
+}
+
+console.log(temp2)//{ a: [ 1, 2, 3 ],
+                      b: 2,
+                     f1: [Function: f1],
+          aFunction: [Function] }
+//这说明对象中的方法和属性，是存在一个hash表中的，可以直接通过hash表添加新方法和新属性
+```
+
 
 
      

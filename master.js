@@ -1,19 +1,19 @@
-// let clustor = require('cluster')
+let clustor = require('cluster')
 
-// class temp {
-// constructor(){
-//   this.a = 'a'
-//   this.b = 'b'
-//   this.f1
-//   this.f2
-// }
-// f1(){
-// console.log(`a:${this.a}`)
-// }
-// f2(){
-//   console.log(`b:${this.b}`)
-// }
-// }
+class temp {
+constructor(){
+  this.a = 'a'
+  this.b = 'b'
+  this.f1
+  this.f2
+}
+f1(){
+console.log(`a:${this.a}`)
+}
+f2(){
+  console.log(`b:${this.b}`)
+}
+}
 
 let temp2 = {
   a:[1,2,3],
@@ -67,7 +67,13 @@ var type = function (o){
 });
 
 console.log(type)
+temp2['aFunction'] = function(co){
+  console.log(`this is aFunction ${co}`)
+}
 console.log(temp2)
-console.log(temp2['a'])
+temp['addNew'] = function(){
+  console.log('addNewFunction')
+}
+console.log(temp)
 
 
