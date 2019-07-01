@@ -1,5 +1,8 @@
 let clustor = require('cluster')
-
+let g = global
+g.redis ='redis'
+console.log('g.redis:',global.redis)
+console.log('g:',global)
 // class temp {
 // constructor(){
 //   this.a = 'a'
@@ -76,7 +79,21 @@ let clustor = require('cluster')
 // }
 // console.log(temp)
 
-let arr = ['a','b','c']
-console.log(...new Set(arr))
+let arr = [1,1]
+let runTime = 0
+function calculateArr(a,b){
+  if((a+b)>10000){
+    console.log(`final = ${b}; runtime = ${runTime}`)
+    return
+  }else{
+    runTime = runTime + 1
+    c = a+b
+    console.log(`a = ${a};b = ${b};`)
+    calculateArr(b,c)
+  }
+}
+calculateArr(...arr)
+process.env.NODE_ENV = 'master'
+console.log(process.env.NODE_ENV)
 
 

@@ -45,10 +45,13 @@
 // console.log(require('os').cpus().length)
 // console.log(require('os').cpus())
 
-let a = '1,2,2,2,3'
-let l = a.split(',')
-console.log(l.length)
-console.log(l)
-let i = new Set(l)
-console.log(i)
-console.log(i.size)
+let a = {
+  value:'1,2,2,2,3'
+}
+a.valueOf = function(){
+  return 6
+}
+c = a + 1
+console.log(Object.getOwnPropertyDescriptor(a,'value'))
+
+
