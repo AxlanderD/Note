@@ -1,11 +1,15 @@
 # Node子进程和集群
-集群：在服务端编程中，通常会创建多个node实例来处理客户端的请求，以此提升系统的吞吐率。对这样多个node实例，我们称之为cluster（集群）。<br>
+集群：在服务端编程中，通常会创建多个 node 实例来处理客户端的请求，以此提升系统的吞吐率。对这样多个 node 实例，我们称之为 cluster（集群）。<br>
 `IPC`：Inter-Process Communication 进程间通讯<br>
 `child_process`：创建子进程模块<br>
 `cluster`：子进程管理模块
 
 <center><img src = "https://img-blog.csdn.net/20180411162337266?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2hvbmdjaGg=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" title = "Master-Worker"></center>
 <center><font size='2' color = '#006666'>Master-Worker</font></center>
+
+>思路：子进程 集群管理
+>>1.子进程：（1）创建（2）关闭（3）子进程间通信（4）父子进程间通信<br>
+>>2.集群管理：（1）管理集群（2）控制进程执行顺序（3）任务分配调度（4）消息管理（5）几种集群模式
 
 `child_process` 模块提供了 `span()`、`exec()`、 `execFile()`、`fork()` 这四个方法来创建子进程
 
@@ -49,14 +53,14 @@ Node 父子进程主要通过 `on('message')` 和 `send()` 来进行通信，前
 
 
 
-**nginx** ：用于在多台机器上进行负载调度，**nginx** 是一个开源的 **HTTP server** 和反向代理工具，尤其擅长处理静态文件，比如：**CSS** 和 **HTML** 。因此，**nginx** 常被用于处理站点的静态文件，和分发动态请求到 **nodejs** 的服务器上<br>
-**forever** ：当 **nodejs** 崩溃的时候可以重启 **node** 进程
+**nginx** ：用于在多台机器上进行负载调度，nginx 是一个开源的 HTTP server 和反向代理工具，尤其擅长处理静态文件，比如：CSS 和 HTML 。因此，**nginx** 常被用于处理站点的静态文件，和分发动态请求到 nodejs 的服务器上<br>
+**forever** ：当 nodejs 崩溃的时候可以重启 node 进程
 
 ```
-cpuNum = require('os').cpus().length
+cpuNum = require('os').cpus().length//可以获取电脑的cpu数目
 ```
 
 [句柄](#句柄)：句柄是一种引用，可以用来标识资源，例如通过句柄可以标识一个socket对象、一个server对象等<br>
-[前向代理](#前向代理)：前向代理获取互联网上的资源返回给一个或者多个客户端，服务端只知道代理的IP地址，而不知道客户端地址
-[反向代理](#反向代理)：反向代理和前向代理相反，反向代理是在服务端使用的，客户端可以通过反向代理访问后端服务器，而不必知道来自哪台服务器。相当于 **客户端** 《==》 **代理** 《==》 **服务端**  
+[前向代理](#前向代理)：前向代理获取互联网上的资源返回给一个或者多个客户端，服务端只知道代理的IP地址，而不知道客户端地址<br>
+[反向代理](#反向代理)：反向代理和前向代理相反，反向代理是在服务端使用的，客户端可以通过反向代理访问后端服务器，而不必知道来自哪台服务器。相当于 **客户端** <--> **代理** <--> **服务端**  
 
