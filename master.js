@@ -2,21 +2,20 @@ let clustor = require('cluster')
 let g = global
 g.redis ='redis'
 console.log('g.redis:',global.redis)
-console.log('g:',global)
-// class temp {
-// constructor(){
-//   this.a = 'a'
-//   this.b = 'b'
-//   this.f1
-//   this.f2
-// }
-// f1(){
-// console.log(`a:${this.a}`)
-// }
-// f2(){
-//   console.log(`b:${this.b}`)
-// }
-// }
+class temp {
+constructor(){
+  this.a = 'a'
+  this.b = 'b'
+  this.f1 
+  this.f2
+}
+f1(){
+console.log(`a:${this.a}`)
+}
+f2(){
+  console.log(`b:${this.b}`)
+}
+}
 
 // let temp2 = {
 //   a:[1,2,3],
@@ -92,8 +91,20 @@ function calculateArr(a,b){
     calculateArr(b,c)
   }
 }
-calculateArr(...arr)
-process.env.NODE_ENV = 'master'
-console.log(process.env.NODE_ENV)
+// calculateArr(...arr) 递归计算斐波那契数列
 
+let obj = {
+  a:'nas',
+  g:function(){
+    console.log('dosoth')
+  }
+}
+Object.defineProperty(obj,'a',{
+  value:'123',
+  writable:false,
+  enumerable:true,
+  configurable:false,
+})
+obj.a = 456
+console.log(Object.getOwnPropertyDescriptor(obj,'g'))
 
