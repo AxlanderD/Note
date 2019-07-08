@@ -42,7 +42,22 @@
 ===
 ### ES6
 `async-await`: 异步 - 等待 ，主要用于使用同步写法进行异步操作<br>
-`promise`:
+`promise`:.all()/.catch()/
+```
+// resolve,reject 分别代表异步操作执行成功后的回调函数和异步操作
+/* resolve是将Promise的状态置为1.pending2.fullfiled(完成)3.reject(拒绝)则是将Promise  状态置为reject(失败)*/
+let p = new Promise((resolve,reject)=>{
+  do...
+  resolve(...)
+})
+// new Promise后会直接执行 因此要包含在函数中使用
+
+function futureDo(){
+  return p = new Promise((resolve,reject)=>{
+      do...
+  })
+}
+```
 
 
 
