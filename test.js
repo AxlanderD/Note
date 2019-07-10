@@ -45,13 +45,24 @@
 // console.log(require('os').cpus().length)
 // console.log(require('os').cpus())
 
-let a = {
-  value:'1,2,2,2,3'
-}
-a.valueOf = function(){
-  return 6
-}
-c = a + 1
-console.log(Object.getOwnPropertyDescriptor(a,'value'))
+// let a = {
+//   value:'1,2,2,2,3'
+// }
+// a.valueOf = function(){
+//   return 6
+// }
+// c = a + 1
+// console.log(Object.getOwnPropertyDescriptor(a,'value'))
+
+let xlsx = require('node-xlsx')
+let fs = require('fs')
+let file = xlsx.parse('C:/Users/Administrator/Desktop/需要改变的头像/品牌名单20190708.xlsx')
+console.log(file[0].data)
+let data = [['name1','name2','name3','name4'],['data1','data2','data3','data4']]
+let copydata = xlsx.build([{
+  name:'sheet',
+  data:data
+}])
+fs.writeFileSync('C:/Users/Administrator/Desktop/需要改变的头像/CopyData.xlsx',copydata)
 
 

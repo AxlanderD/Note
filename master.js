@@ -75,19 +75,48 @@ let os = require('os')
 
 //使用child_process模块进行（不使用cluster）
 
-let p = new Promise((resolve,reject)=>{
-  
-})
 let worker1 = cp.fork('./worker.js')
+let worker2
+let worker3
+let worker4
+let em = require('events').EventEmitter
+let emitter = new em()
+let cpuNum = os.cpus().length
+let workList = [[1,2,3],[4,5,6],[11,12],[13,26],[10]]
 worker1.send([1,2,3])
 worker1.on('message',(msg)=>{
   if(msg==='StepList Complete'){
     console.log(`${worker1.pid} has done all thing`)
-    this.emit('step1 complete')
+    
   }
   else console.log('continue msg:'+msg)
 })
-this.on('step1 complete',()=>{
-  let worker
+worker1.on('exit',(code,signal)=>{
+  console.log('code:'+code+' signal:'+signal)
+  emitter.emit('step1 complete')
+})
+emitter.on('step1 complete',()=>{
+  worker2 = cp.fork('./worker.js')
+  worker2.send(workList[0])
+  worker2.on('message',(msg)=>{
+    console.log(`${worker2.pid} has done all thing`)
+    emitter.emit('step2 complete')
+  })
+  worker2.on('exit',(code,signal)=>{
+    console.log('code:'+code+' signal:'+signal)
+    emitter.emit('step2 complete')
+  })
+})
+emitter.on('step2 complete',()=>{
+  while(workList.length>0){
+    for (let i = 0;i < cpuNum;i++){
+      let worker_child = cp.fork('./worker.js')
+      worker_child.send(workList.shift())
+      worker_child.on('message',()=>{
+        console.log(1)
+      })
+    }
+  }
+  
 })
 

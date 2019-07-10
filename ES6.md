@@ -42,10 +42,14 @@
 ===
 ### ES6
 `async-await`: 异步 - 等待 ，主要用于使用同步写法进行异步操作<br>
-`promise`:.all()/.catch()/
+`promise`：
+- .all()：当参数中的参数中所有promise对象都触发成功的时候才可以触发成功该promise对象
+- .race()：返回先完成的promise状态
+- .reject()：返回一个失败的promise对象
+- .resolve()
 ```
 // resolve,reject 分别代表异步操作执行成功后的回调函数和异步操作
-/* resolve是将Promise的状态置为1.pending2.fullfiled(完成)3.reject(拒绝)则是将Promise  状态置为reject(失败)*/
+/*  1.pending(初始状态) 2.fullfiled(完成) 3.reject(拒绝) resovle是将Promise状态置为fullfiled reject是将Promise状态置为reject(失败)，失败状态下返回的任何值都将被忽略 */
 let p = new Promise((resolve,reject)=>{
   do...
   resolve(...)
@@ -57,6 +61,14 @@ function futureDo(){
       do...
   })
 }
+futureDo.then(()=>{
+  //成功状态调用的代码
+},()=>{
+  //失败状态调用的代码
+}).catch((e){
+  //捕捉到错误时执行的代码
+  //可以接收到throw出来的错误
+})
 ```
 
 
